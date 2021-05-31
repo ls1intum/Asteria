@@ -1,0 +1,202 @@
+{
+  "id": "f49c2824-85dd-482c-aaf7-3569fe0feb5c",
+  "title": "UMLClassDiagram",
+  "model": {
+    "version": "2.0.0",
+    "type": "ClassDiagram",
+    "size": {
+      "width": 1060,
+      "height": 600
+    },
+    "interactive": {
+      "elements": [],
+      "relationships": []
+    },
+    "elements": [
+      {
+        "id": "4b3a1e6f-5df0-497f-90de-89c19a422abb",
+        "name": "vehicle",
+        "type": "AbstractClass",
+        "owner": null,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 110
+        },
+        "attributes": [
+          "40d17ebf-5d2c-4a0e-84cf-a7a8cf295af4"
+        ],
+        "methods": [
+          "d63b85d9-0607-45a1-83c5-2a56dda81071"
+        ]
+      },
+      {
+        "id": "40d17ebf-5d2c-4a0e-84cf-a7a8cf295af4",
+        "name": "+ color: String",
+        "type": "ClassAttribute",
+        "owner": "4b3a1e6f-5df0-497f-90de-89c19a422abb",
+        "bounds": {
+          "x": 0,
+          "y": 50,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "d63b85d9-0607-45a1-83c5-2a56dda81071",
+        "name": "+ StepOne()",
+        "type": "ClassMethod",
+        "owner": "4b3a1e6f-5df0-497f-90de-89c19a422abb",
+        "bounds": {
+          "x": 0,
+          "y": 80,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "002e4ef1-8a3b-4370-b01d-dc0cf8dbd15b",
+        "name": "Driving",
+        "type": "Interface",
+        "owner": null,
+        "bounds": {
+          "x": 770,
+          "y": 40,
+          "width": 200,
+          "height": 110
+        },
+        "attributes": [
+          "eba1f6b3-dcd2-4012-b930-0f2b987bdf66"
+        ],
+        "methods": [
+          "1d630401-44e6-4804-b9be-2b5a123faa33"
+        ]
+      },
+      {
+        "id": "eba1f6b3-dcd2-4012-b930-0f2b987bdf66",
+        "name": "+ number: Int",
+        "type": "ClassAttribute",
+        "owner": "002e4ef1-8a3b-4370-b01d-dc0cf8dbd15b",
+        "bounds": {
+          "x": 770,
+          "y": 90,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "1d630401-44e6-4804-b9be-2b5a123faa33",
+        "name": "+ StepOne()",
+        "type": "ClassMethod",
+        "owner": "002e4ef1-8a3b-4370-b01d-dc0cf8dbd15b",
+        "bounds": {
+          "x": 770,
+          "y": 120,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "e0ce58b6-8654-4547-a812-59372a92f0e6",
+        "name": "Car",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 20,
+          "y": 360,
+          "width": 200,
+          "height": 70
+        },
+        "attributes": [],
+        "methods": [
+          "c9741c96-1484-41f4-ac41-0e29ef4a9446"
+        ]
+      },
+      {
+        "id": "c9741c96-1484-41f4-ac41-0e29ef4a9446",
+        "name": "+ driveCar()",
+        "type": "ClassMethod",
+        "owner": "e0ce58b6-8654-4547-a812-59372a92f0e6",
+        "bounds": {
+          "x": 20,
+          "y": 400,
+          "width": 200,
+          "height": 30
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "ff82dec9-a574-407f-af42-018c59b6e26f",
+        "name": "",
+        "type": "ClassBidirectional",
+        "owner": null,
+        "bounds": {
+          "x": 105,
+          "y": 110,
+          "width": 10,
+          "height": 250
+        },
+        "path": [
+          {
+            "x": 5,
+            "y": 250
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Up",
+          "element": "e0ce58b6-8654-4547-a812-59372a92f0e6",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Down",
+          "element": "4b3a1e6f-5df0-497f-90de-89c19a422abb",
+          "multiplicity": "",
+          "role": ""
+        }
+      },
+      {
+        "id": "b83f6b52-b235-44b2-87da-6c5965724967",
+        "name": "",
+        "type": "ClassBidirectional",
+        "owner": null,
+        "bounds": {
+          "x": 200,
+          "y": 65,
+          "width": 570,
+          "height": 31
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 10
+          },
+          {
+            "x": 570,
+            "y": 10
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "4b3a1e6f-5df0-497f-90de-89c19a422abb",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Left",
+          "element": "002e4ef1-8a3b-4370-b01d-dc0cf8dbd15b",
+          "multiplicity": "",
+          "role": ""
+        }
+      }
+    ],
+    "assessments": []
+  },
+  "lastUpdate": "2021-05-29T13:25:58.435Z"
+}

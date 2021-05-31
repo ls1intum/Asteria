@@ -1,0 +1,11 @@
+name: KG
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.6.13
+  - ipython=7.16.1
+  - ipython_genutils=0.2.0
+  - pip=21.1.1
+  - pip:
+      - -r file:requirements.txt

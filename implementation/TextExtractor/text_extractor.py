@@ -1,49 +1,48 @@
-from graph_drawer import draw_graph
-from itertools import starmap
-from tqdm import tqdm
-
 from TextExtractor.parser import Parser
 from TextExtractor.sentence_simplifier.sentence_simplifier import sentence_simplifier
-from TextExtractor.svo_extractor import get_entities, get_relation
+from TextExtractor.patterns_matcher.patterns_matcher import PatternMatcher
+from TextExtractor.templates_matcher.templates_matcher import TemplateMatcher
+from TextExtractor.graph_mapper import map_to_graph
 
 
-class Text_extractor:
+class TextExtractor:
     def __init__(self):
-        self.parser = Parser()
+        self.patterns_matcher = PatternMatcher()
+        self.parser = Parser(self.patterns_matcher.nlp)
         self.simplifier = sentence_simplifier()
 
-
-    def replace_synonyms(self, entity_pair, relation):
-        if "sublcass" or "inherit" in relation:
-            relation = "inherit"
-            return entity_pair, relation
-        if "superclass" in relation:
-            entity_pair = entity_pair[1], entity_pair[0]
-            relation = "inherit"
-            return entity_pair, relation
-        # tbd .....
-
-
     # solve references
-    def get_graph_from_submission(self, txt):
-        ref_txt = self.parser.solve_references(txt)
+    def get_graph_from_text(self, txt):
+        #ref_txt = self.parser.solve_references(txt)
 
         # simplify and split compound and complex sentences
-        sentences = self.simplifier.simplify_sentences(ref_txt)
-        print(f"sentences= {sentences}")
+        sentences = self.simplifier.simplify_sentences(txt)
+       # print("+++++++++++ SENTENCES +++++++++++\n")
+        #print(f"sentences= {sentences}")
+        #print("+++++++++++++++++++++++++++++++++\n")
+        #sentences = [txt]
+        semantic_roles = []
+        matched_templates = []
+        for sentence in sentences:
+            templates_matcher = TemplateMatcher()
+            semantic_role = self.patterns_matcher.get_semantic_roles_arguments(sentence)
+            print(f"debug: semantic = {semantic_role}")
+            semantic_roles.append(semantic_role)
+            matched_templates.extend(templates_matcher.map_sentence_to_template(semantic_role))
 
-        # extract entities and relations
-        entity_pairs = [get_entities(i) for i in tqdm(sentences)]
-        print(f"entities = {entity_pairs}")
-        relations = [get_relation(i) for i in tqdm(sentences)]
-        print(f"relations = {relations}")
+        print("+++++++++++ MATCHED TEMPLATES +++++++++++\n")
+        print(f"{matched_templates}")
+        print("+++++++++++++++++++++++++++++++++\n")
 
-        # Lemmatization and stemming
-        relations = self.parser.get_lemmas(relations)
-        print(f"relations_lemmata = {relations}")
+        entity_pairs, relations = map_to_graph(matched_templates)
 
-        # normalize vocabulary
-        starmap(self.replace_synonyms, zip(entity_pairs, relations))
-        draw_graph(entity_pairs, relations)
-
+        print("+++++++++++ ENTITY PAIRS +++++++++++\n")
+        print(f"{entity_pairs}")
+        print("+++++++++++++++++++++++++++++++++\n")
+        print("+++++++++++ RELATIONS +++++++++++\n")
+        print(f"{relations}")
+        print("+++++++++++++++++++++++++++++++++\n")
         return entity_pairs, relations
+
+
+

@@ -1,11 +1,11 @@
-import spacy
 import neuralcoref
 
 
 class Parser:
-    def __init__(self):
-        self.parser = spacy.load('en_core_web_md', disable=['ner', 'textcat'])
+    def __init__(self, model):
+        self.parser = model
         neuralcoref.add_to_pipe(self.parser)
+
 
     def solve_references(self, sample_text):
         doc = self.parser(sample_text)

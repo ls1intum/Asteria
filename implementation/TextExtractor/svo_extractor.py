@@ -1,10 +1,8 @@
 import spacy
 
 nlp = spacy.load('en_core_web_md')
-#nlp.add_to_pipe("tok2vec")
 from spacy.matcher import Matcher
 
-from tqdm import tqdm
 
 
 def get_entities(sent):

@@ -56,6 +56,8 @@ class sentence_simplifier:
                 sent = " ".join(tokenize(sent1))
                 simplified = simplify(sent)
                 for i in simplified:
+                    i = i.replace(" -RRB- ", "()")
+                    print(f"i = {i}\n")
                     simplified_sentences.append(i)
                     i = list(i)
                     if ord(i[0]) >= 97 and ord(i[0]) <= 122:

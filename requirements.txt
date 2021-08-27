@@ -11,3 +11,8 @@ pycorenlp==0.3.0
 nltk==3.6.2
 numpy==1.19.2
 pandas==1.1.5
+fuzzywuzzy==0.18.0
+more-itertools==8.8.0
+visualise-spacy-tree==0.0.6
+fastapi==0.67.0
+

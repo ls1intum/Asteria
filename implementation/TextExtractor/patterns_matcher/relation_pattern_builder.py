@@ -17,6 +17,9 @@ class RelationPatternBuilder:
             [{"LEMMA": "have"}],
             [{"LEMMA": "implement"}]])
 
+        self.HAS_PARENT_PATTERN = Pattern("HAS_PARENT", [
+            [{"TEXT": "in"}]])
+
         self.BE_METHOD_PATTERN = Pattern("BE_METHOD", [
             [{"LEMMA": "be"}, {"POS": "DET", "OP": "*"}, {"LEMMA": "method"}],
         ])
@@ -67,6 +70,6 @@ class RelationPatternBuilder:
                                   self.REALIZATION_PATTERN, self.DEPENDENCY_ASSOCIATION_PATTERN,
                                   self.HAS_ATTRIBUTE_PATTERN, self.HAS_METHOD_PATTERN, self.BE_METHOD_PATTERN,
                                   self.UNIDIRECTIONAL_ASSOCIATION_PATTERN, self.BIDIRECTIONAL_ASSOCIATION_PATTERN,
-                                  self.COMPOSITION_PATTERN_1, self.COMPOSITION_PATTERN_2]
+                                  self.COMPOSITION_PATTERN_1, self.COMPOSITION_PATTERN_2, self.HAS_PARENT_PATTERN]
         # Vector enumerating possible associations between UML classes
     #   self.UML_ASSOCIATIONS = ["be subclass of", "be superclass of", "implement","be implemented by", "be composed of", "be part of", "has parent"]

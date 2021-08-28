@@ -32,4 +32,5 @@ def classify_uml_elements_with_types(graph_matrix, sources):
         uml_elements_matrices[index - 1] = graph_matrix[indices]
         uml_elements_sources[index - 1] = [sources[i] for i in indices]
 
+
     return uml_elements_sources, uml_elements_matrices

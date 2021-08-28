@@ -3,11 +3,13 @@ from TextExtractor.sentence_simplifier.sentence_simplifier import sentence_simpl
 from TextExtractor.patterns_matcher.patterns_matcher import PatternMatcher
 from TextExtractor.templates_matcher.templates_matcher import TemplateMatcher
 from TextExtractor.graph_mapper import map_to_graph
+import spacy
 
 
 class TextExtractor:
     def __init__(self):
-        self.patterns_matcher = PatternMatcher()
+        self.nlp = spacy.load("en_core_web_md")
+        self.patterns_matcher = PatternMatcher(self.nlp)
         self.parser = Parser(self.patterns_matcher.nlp)
         self.simplifier = sentence_simplifier()
 
@@ -16,7 +18,10 @@ class TextExtractor:
         #ref_txt = self.parser.solve_references(txt)
 
         # simplify and split compound and complex sentences
-        sentences = self.simplifier.simplify_sentences(txt)
+        #sentences = self.simplifier.simplify_sentences(txt)
+        doc = self.nlp(txt)
+        sentences = [sent.text for sent in doc.sents]
+        print(f"sentences = {sentences}")
        # print("+++++++++++ SENTENCES +++++++++++\n")
         #print(f"sentences= {sentences}")
         #print("+++++++++++++++++++++++++++++++++\n")

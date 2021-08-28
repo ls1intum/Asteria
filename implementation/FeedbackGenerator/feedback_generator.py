@@ -13,9 +13,12 @@ class FeedbackGenerator:
 
     def get_feedback(self, similarity_triples: [(Class, Class, float)]) -> ([str], [str]):
         flatten = itertools.chain.from_iterable
+        correct_identified_classes = [class1.name for (class1, class2,_) in similarity_triples if class1 is not None and class2 is not None]
+        correct_classes_feedback= self.feedback_text.get_correctly_identified__classes_feedback(correct_identified_classes)
         feedback = [self.get_feedback_for_similarity_pair(similarity_triple) for similarity_triple in
                     similarity_triples]
         positive_feedback = list(flatten([feedback_pair[0] for feedback_pair in feedback]))
+        positive_feedback.append(correct_classes_feedback)
         negative_feedback = list(flatten([feedback_pair[1] for feedback_pair in feedback]))
         return positive_feedback, negative_feedback
 
@@ -48,7 +51,7 @@ class FeedbackGenerator:
         return positive_feedback, negative_feedback
 
     def get_feedback_for_associations(self, submission_element: Class, solution_element: Class) -> ([str], [str]):
-        associations_relations = ["implements", "is composed of", "uses", "calls"]
+        associations_relations = ["implements","implements", "is composed of", "uses", "calls"]
         associations_names = ["inheritance", "realization", "aggregation(i.e. composition)", "unidirectional association","dependency"]
         associations_indices = [self.relations.index(association) + 1 for association in associations_relations]
 
@@ -66,21 +69,27 @@ class FeedbackGenerator:
         similar_associations = list((Counter(submission_associations) & Counter(solution_associations)).elements())
         similar_associations_names = [associations_names[associations_relations.index(self.relations[association - 1])]
                                       for association in similar_associations]
-        positive_feedback.append(self.feedback_text.get_associations_partially_correct_feedback(submission_element.name,
+        if len (similar_associations_names) > 0:
+            positive_feedback.append(self.feedback_text.get_associations_partially_correct_feedback(submission_element.name,
                                                                                                 similar_associations_names))
 
+        print(f"solution associations = {solution_associations}")
+        print(f"submission associatiosn = {submission_associations}")
         missing_associations = list((Counter(solution_associations) - Counter(submission_associations)).elements())
+        print(f"missing associations = {missing_associations}")
         missing_associations_names = [
             associations_names[associations_relations.index(self.relations[association - 1])]
             for association in missing_associations]
-        negative_feedback.append(
+        if len(missing_associations_names) > 0:
+            negative_feedback.append(
             self.feedback_text.get_missing_associations_feedback(submission_element.name, missing_associations_names))
 
         superfluous_associations = list((Counter(submission_associations) - Counter(solution_associations)).elements())
         superfluous_associations_names = [
             associations_names[associations_relations.index(self.relations[association - 1])]
             for association in superfluous_associations]
-        negative_feedback.append(self.feedback_text.get_superfluous_associations_feedback(submission_element.name,
+        if len(superfluous_associations_names) > 0:
+            negative_feedback.append(self.feedback_text.get_superfluous_associations_feedback(submission_element.name,
                                                                                           superfluous_associations_names))
         return positive_feedback, negative_feedback
 

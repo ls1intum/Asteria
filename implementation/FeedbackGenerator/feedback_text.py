@@ -16,6 +16,10 @@ class FeedbackText:
     @staticmethod
     def get_correct_element_feedback(element_type: str, element_name: str) -> str:
         return f"Well done! You described correctly the {element_type} {element_name}!"
+    @staticmethod
+    def get_correctly_identified__classes_feedback(class_names: [str]) -> str:
+        names = ",".join(class_names)
+        return f"You correctly identified required element: {names}!"
 
     @staticmethod
     def get_missing_element_feedback(element_name: str) -> str:
@@ -28,12 +32,12 @@ class FeedbackText:
     @staticmethod
     def get_missing_associations_feedback(element_name: str, missing_associations: [str]) -> str:
         associations_str = ",".join(missing_associations)
-        return f"You forgot to mention the following associations {associations_str} in {element_name}!"
+        return f"You forgot to mention the following association {associations_str} in {element_name}!"
 
     @staticmethod
     def get_superfluous_associations_feedback(element_name: str, superfluous_associations: [str]) -> str:
         associations_str = ",".join(superfluous_associations)
-        return f"You have superfluous association  in {element_name}!"
+        return f"You have superfluous association {associations_str}  in {element_name}!"
 
     @staticmethod
     def get_associations_fully_correct_feedback(element_name: str) -> str:
@@ -42,7 +46,7 @@ class FeedbackText:
     @staticmethod
     def get_associations_partially_correct_feedback(element_name: str, correct_associations: [str]) -> str:
         associations = ",".join(correct_associations)
-        return f"You correctly covered the associations {associations} in {element_name}!"
+        return f"You correctly covered the association {associations} in {element_name}!"
 
     @staticmethod
     def get_correct_methods_feedback(element_name: str) -> str:

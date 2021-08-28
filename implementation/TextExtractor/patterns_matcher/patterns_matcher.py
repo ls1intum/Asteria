@@ -9,8 +9,8 @@ from TextExtractor.patterns_matcher.semantic_role import semanticRole
 
 
 class PatternMatcher:
-    def __init__(self):
-        self.nlp = spacy.load("en_core_web_md")
+    def __init__(self, nlp):
+        self.nlp = nlp
         self.matcher = Matcher(self.nlp.vocab)
         self.load_patterns(EntityPatternsBuilder(), RelationPatternBuilder())
 

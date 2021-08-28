@@ -19,6 +19,11 @@ class TemplateBuilder:
         self.HAS_METHOD_TEMPLATE = [[{"CLASS": ""},{ "HAS_METHOD": "has method"}, {"METHOD": ""}],
                                     [{"INTERFACE": ""},{ "HAS_METHOD": "has method"}, {"METHOD": ""}]]
 
+        self.HAS_PARENT_TEMPLATE = [[{"METHOD": ""},{ "HAS_PARENT": "has parent"}, {"CLASS": ""}],
+                                    [{"METHOD": ""},{ "HAS_PARENT": "has parent"}, {"INTERFACE": ""}],
+                                    [{"ATTRIBUTE": ""},{ "HAS_PARENT": "has parent"}, {"CLASS": ""}],
+                                    [{"ATTRIBUTE": ""},{ "HAS_PARENT": "has parent"}, {"INTERFACE": ""}]]
+
         self.BE_SUBCLASS_TEMPLATE = [[{"CLASS": ""}, {"SUBCLASS": "is subclass of"}, {"CLASS": ""}]]
 
         self.BE_SUPERCLASS_TEMPLATE = [[{"CLASS": ""}, {"SUPERCLASS#": "is superclass of"}, {"CLASS": ""}]]
@@ -37,7 +42,7 @@ class TemplateBuilder:
         self.ALL_RELATIONS_TEMPLATES = [self.ABSTRACT_TEMPLATE, self.HAS_METHOD_TEMPLATE, self.BE_SUBCLASS_TEMPLATE,
                                         self.BE_SUPERCLASS_TEMPLATE, self.REALIZATION_TEMPLATE,
                                         self.COMPOSITION1_TEMPLATE, self.COMPOSITION2_TEMPLATE,
-                                        self.UNIDIRECTIONAL_TEMPLATE, self.DEPENDENCY_TEMPLATE]
+                                        self.UNIDIRECTIONAL_TEMPLATE, self.DEPENDENCY_TEMPLATE, self.HAS_PARENT_TEMPLATE]
 
         self.ALL_TYPES_TEMPLATES = [self.BE_CLASS_TEMPLATE, self.BE_ENUM_TEMPLATE, self.BE_INTERFACE_TEMPLATE,
                                     self.BE_METHOD_TEMPLATE, self.BE_ATTRIBUTE_TEMPLATE]
@@ -47,6 +52,8 @@ class TemplateBuilder:
         # Vector enumerating possible properties of a UML class
         self.CLASS_PROPERTIES = ["is abstract", "has method", "has attribute"]
 
+        self.ELEMENT_TYPES = ["CLASS","ENUM", "INTERFACE", "METHOD", "ATTRIBUTE"]
+
         # Vector enumerating possible associations between UML classes
         self.UML_ASSOCIATIONS = ["is subclass of", "is superclass of", "implements", "uses", "calls",
-                                 "is composed of", "is part of"]
+                                 "is composed of", "is part of", "has parent"]

@@ -5,10 +5,9 @@ from TextExtractor.text_extractor import TextExtractor
 from UMLClassDiagramExtractor.uml_extractor import UML_extractor
 
 #txt_submission = "The Context class uses the SortingStrategy interface. The SortingStrategy interface has the method sortList(). The ConcreteSortingStrategy classes implement the SortingStrategy interface and its sortList() method. The Context class uses the SortingStrategy class. The SortingPolicy interface calls the Context class. The Client class also calls the Context class."
-txt_submission = "The Context class has the methods selectStrategy() and executeSorting(). The Context class uses the SortingStrategy interface. The SortingStrategy interface has the method sortList(). The ConcreteSortingStrategy classes implement the SortingStrategy interface and its sortList() method. The Context class uses the SortingStrategy interface. The SortingPolicy class calls the Context class. The Client class also calls the Context class."
+#txt_submission = "The Context class has the methods selectStrategy() and executeSorting(). The Context class uses the SortingStrategy interface. The SortingStrategy interface has the method sortList(). The ConcreteSortingStrategy classes implement the SortingStrategy interface and its sortList() method. The Context class uses the SortingStrategy interface. The SortingPolicy class calls the Context class. The Client class also calls the Context class."
 sample_solution = "/home/maisa/Desktop/Asteria/implementation/UMLClassDiagramExtractor/SampleSolution.json"
-
-
+txt_submission = "The class Mergesort and the class Quicksort implement the interface AbstractSort. The Context class uses the Policy class to select the AbstractSort interface. The Context then uses the AbstractSort interface to perform sorting."
 def extract_information_from_sample_solution(sample_solution):
     # extract KG from UML class diagram
     uml_extractor = UML_extractor(sample_solution)
@@ -64,4 +63,10 @@ text_extractor = TextExtractor()
 submission_graph_nodes, submission_graph_edges = text_extractor.get_graph_from_text(txt_submission)
 submission_graph = submission_graph_nodes, submission_graph_edges
 draw_graph(submission_graph_nodes, submission_graph_edges)
+
+import spacy
+nlp = spacy.load("en_core_web_md")
+doc = nlp(txt_submission)
+for nc in doc.noun_chunks:
+    print(doc[0].pos_)
 '''

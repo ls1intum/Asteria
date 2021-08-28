@@ -4,8 +4,8 @@
 
 def map_to_graph(templates: [{}]):
     elements = []
-    relations = ["has method", "calls", "uses", "implements", "is composed of", "is part of"]
-    opposite_relations = ["has parent", "is called by", "is used by", "is implemented by", "is part of", "is composed of"]
+    relations = ["has method", "has parent","calls", "uses", "implements", "is composed of", "is part of"]
+    opposite_relations = ["has parent", "has method", "is called by", "is used by", "is implemented by", "is part of", "is composed of"]
     for template in templates:
         values = [value for dict in template for key, value in dict.items()]
         print(f"Values: {values}")
@@ -23,9 +23,9 @@ def map_to_graph(templates: [{}]):
 
 
 def clean_name(name: str) -> str:
-    name = name[0].lower() + name[1:]
-    for str in ["class", "Class", "method", "Method", "interface", "Interface", "enum", "Enum", "attribute",
-                "Attribute"]:
+    for str in ["class "," class", " Class","Class " "method "," method", " Method"," Method ", " interface", "interface ", " Interface","Interface ", " enum"," enum", " Enum", "Enum ", " attribute","attribute ",
+                " Attribute", "Attribute "]:
         name = name.replace(str, "")
-    name = name.replace(" ", "")
+    name = name[0].lower() + name[1:]
+    print(f"name = {name}")
     return name

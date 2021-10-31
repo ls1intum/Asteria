@@ -6,9 +6,9 @@ Knowledge Graph(KG) data structure and can be integrated into learning managemen
 # Table of Contents
 
 * [Architecture](#Architecture)
-* [Text Processing Pipeline](#Text Processing Pipeline)
-* [Text Extractor Component](#Text Extractor Component)
-* [Knowledge Comparison Engine](#Knowledge Comparison Engine)
+* [Text Processing Pipeline](#Text-Processing-Pipeline)
+* [Text Extractor Component](#Text-Extractor-Component)
+* [Knowledge Comparison Engine](#Knowledge-Comparison-Engine)
 * [Configuration](#Configuration)
 * [Usage](#Usage)
 

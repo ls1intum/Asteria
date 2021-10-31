@@ -1,0 +1,14 @@
+########### FEEDBACK ###########
++++++++++++ POSITIVE FEEDBACK +++++++++++
+You correctly identified required element: SortingStrategy,QuickSort!
++++++++++++++++++++++++++++++++++++++++++
+----------- NEGATIVE FEEDBACK -----------
+You have a superfluous class with name Context!
+You forgot to mention the association dependency that starts from SortingStrategy!
+You have a superfluous class with name Policy!
+One method is missing in QuickSort!
+You have a superfluous class with name MergeSort!
+You forgot to mention the class  Context!
+You forgot to mention the class  Policy!
+You forgot to mention the class  QuickSort!
+You forgot to mention the class  MergeSort!

@@ -1,0 +1,1 @@
+The Context class uses the SortingStrategy interface. The Context class should call the Policy class. The QuickSort class and the MergeSort class implement the SortingStrategy interface.

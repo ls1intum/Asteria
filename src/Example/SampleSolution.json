@@ -1,0 +1,378 @@
+{
+  "id": "eb87dac0-c9a6-499e-9bd7-59a71c2363f1",
+  "title": "UMLClassDiagram",
+  "model": {
+    "version": "2.0.0",
+    "type": "ClassDiagram",
+    "size": {
+      "width": 1080,
+      "height": 420
+    },
+    "interactive": {
+      "elements": [],
+      "relationships": []
+    },
+    "elements": [
+      {
+        "id": "d81c94f0-6d12-4fa8-9c5c-6044c27f4b0a",
+        "name": "SortInterface",
+        "type": "Interface",
+        "owner": null,
+        "bounds": {
+          "x": 610,
+          "y": 130,
+          "width": 200,
+          "height": 80
+        },
+        "attributes": [],
+        "methods": [
+          "962bf1cf-d3a0-42ce-bd8b-ae7b21a8be0b"
+        ]
+      },
+      {
+        "id": "962bf1cf-d3a0-42ce-bd8b-ae7b21a8be0b",
+        "name": "+ sort()",
+        "type": "ClassMethod",
+        "owner": "d81c94f0-6d12-4fa8-9c5c-6044c27f4b0a",
+        "bounds": {
+          "x": 610,
+          "y": 180,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+        "name": "Context",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 200,
+          "y": 130,
+          "width": 200,
+          "height": 100
+        },
+        "attributes": [],
+        "methods": [
+          "9a1e8b1c-004c-4df1-8470-5773247fdf07",
+          "8d945f9e-683b-4674-b5f2-5f7cee3b87ae"
+        ]
+      },
+      {
+        "id": "9a1e8b1c-004c-4df1-8470-5773247fdf07",
+        "name": "selectSortAgorithm()",
+        "type": "ClassMethod",
+        "owner": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+        "bounds": {
+          "x": 200,
+          "y": 170,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "8d945f9e-683b-4674-b5f2-5f7cee3b87ae",
+        "name": "sort()",
+        "type": "ClassMethod",
+        "owner": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+        "bounds": {
+          "x": 200,
+          "y": 200,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "f8d2e891-fdc7-404c-b593-bc5ce195705f",
+        "name": "Policy",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 400,
+          "y": 0,
+          "width": 200,
+          "height": 40
+        },
+        "attributes": [],
+        "methods": []
+      },
+      {
+        "id": "2b91a442-3781-457e-9592-bde2c3642b0c",
+        "name": "Client",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 0,
+          "y": 0,
+          "width": 200,
+          "height": 40
+        },
+        "attributes": [],
+        "methods": []
+      },
+      {
+        "id": "b9cd8f3c-dc52-402c-931c-ba647b5b20fe",
+        "name": "QuickSort",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 430,
+          "y": 300,
+          "width": 200,
+          "height": 70
+        },
+        "attributes": [],
+        "methods": [
+          "74b5792c-6a6a-4634-b05b-d9cad5c19b90"
+        ]
+      },
+      {
+        "id": "74b5792c-6a6a-4634-b05b-d9cad5c19b90",
+        "name": "sort()",
+        "type": "ClassMethod",
+        "owner": "b9cd8f3c-dc52-402c-931c-ba647b5b20fe",
+        "bounds": {
+          "x": 430,
+          "y": 340,
+          "width": 200,
+          "height": 30
+        }
+      },
+      {
+        "id": "4e7d1024-1aa5-4270-8850-014646f96564",
+        "name": "MergeSort",
+        "type": "Class",
+        "owner": null,
+        "bounds": {
+          "x": 840,
+          "y": 300,
+          "width": 200,
+          "height": 70
+        },
+        "attributes": [],
+        "methods": [
+          "a3922c59-0d16-4aa6-a006-d7778e99ae23"
+        ]
+      },
+      {
+        "id": "a3922c59-0d16-4aa6-a006-d7778e99ae23",
+        "name": "sort()",
+        "type": "ClassMethod",
+        "owner": "4e7d1024-1aa5-4270-8850-014646f96564",
+        "bounds": {
+          "x": 840,
+          "y": 340,
+          "width": 200,
+          "height": 30
+        }
+      }
+    ],
+    "relationships": [
+      {
+        "id": "a296ae76-90cd-4218-9075-ad56eed4bf8d",
+        "name": "",
+        "type": "ClassUnidirectional",
+        "owner": null,
+        "bounds": {
+          "x": 400,
+          "y": 160,
+          "width": 210,
+          "height": 31
+        },
+        "path": [
+          {
+            "x": 0,
+            "y": 10
+          },
+          {
+            "x": 210,
+            "y": 10
+          }
+        ],
+        "source": {
+          "direction": "Right",
+          "element": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Left",
+          "element": "d81c94f0-6d12-4fa8-9c5c-6044c27f4b0a",
+          "multiplicity": "",
+          "role": ""
+        }
+      },
+      {
+        "id": "29c69866-d85b-41c8-a9f8-278dc5a4ff2a",
+        "name": "",
+        "type": "ClassDependency",
+        "owner": null,
+        "bounds": {
+          "x": 295,
+          "y": 40,
+          "width": 210,
+          "height": 90
+        },
+        "path": [
+          {
+            "x": 205,
+            "y": 0
+          },
+          {
+            "x": 205,
+            "y": 45
+          },
+          {
+            "x": 5,
+            "y": 45
+          },
+          {
+            "x": 5,
+            "y": 90
+          }
+        ],
+        "source": {
+          "direction": "Down",
+          "element": "f8d2e891-fdc7-404c-b593-bc5ce195705f",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Up",
+          "element": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+          "multiplicity": "",
+          "role": ""
+        }
+      },
+      {
+        "id": "e72f6ef1-9f64-4db9-9753-25bd5c593657",
+        "name": "",
+        "type": "ClassDependency",
+        "owner": null,
+        "bounds": {
+          "x": 95,
+          "y": 40,
+          "width": 210,
+          "height": 90
+        },
+        "path": [
+          {
+            "x": 5,
+            "y": 0
+          },
+          {
+            "x": 5,
+            "y": 45
+          },
+          {
+            "x": 205,
+            "y": 45
+          },
+          {
+            "x": 205,
+            "y": 90
+          }
+        ],
+        "source": {
+          "direction": "Down",
+          "element": "2b91a442-3781-457e-9592-bde2c3642b0c",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Up",
+          "element": "4b21dc1c-6af2-4173-9d9a-616ab6546c14",
+          "multiplicity": "",
+          "role": ""
+        }
+      },
+      {
+        "id": "9e0863ea-4f40-4bba-b985-6689ace6d76e",
+        "name": "",
+        "type": "ClassInheritance",
+        "owner": null,
+        "bounds": {
+          "x": 525,
+          "y": 210,
+          "width": 190,
+          "height": 90
+        },
+        "path": [
+          {
+            "x": 5,
+            "y": 90
+          },
+          {
+            "x": 5,
+            "y": 45
+          },
+          {
+            "x": 185,
+            "y": 45
+          },
+          {
+            "x": 185,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Up",
+          "element": "b9cd8f3c-dc52-402c-931c-ba647b5b20fe",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Down",
+          "element": "d81c94f0-6d12-4fa8-9c5c-6044c27f4b0a",
+          "multiplicity": "",
+          "role": ""
+        }
+      },
+      {
+        "id": "84795939-91bb-4488-8874-333f8007e016",
+        "name": "",
+        "type": "ClassInheritance",
+        "owner": null,
+        "bounds": {
+          "x": 705,
+          "y": 210,
+          "width": 240,
+          "height": 90
+        },
+        "path": [
+          {
+            "x": 235,
+            "y": 90
+          },
+          {
+            "x": 235,
+            "y": 45
+          },
+          {
+            "x": 5,
+            "y": 45
+          },
+          {
+            "x": 5,
+            "y": 0
+          }
+        ],
+        "source": {
+          "direction": "Up",
+          "element": "4e7d1024-1aa5-4270-8850-014646f96564",
+          "multiplicity": "",
+          "role": ""
+        },
+        "target": {
+          "direction": "Down",
+          "element": "d81c94f0-6d12-4fa8-9c5c-6044c27f4b0a",
+          "multiplicity": "",
+          "role": ""
+        }
+      }
+    ],
+    "assessments": []
+  },
+  "lastUpdate": "2021-08-02T09:19:33.073Z",
+  "diagramType": "ClassDiagram"
+}

@@ -15,4 +15,5 @@ fuzzywuzzy==0.18.0
 more-itertools==8.8.0
 visualise-spacy-tree==0.0.6
 fastapi==0.67.0
+python-Levenshtein
 

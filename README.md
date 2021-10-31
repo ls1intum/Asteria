@@ -8,7 +8,7 @@ Knowledge Graph(KG) data structure and can be integrated into learning managemen
 * [Architecture](#Architecture)
 * [Text Processing Pipeline](#Text Processing Pipeline)
 * [Text Extractor Component](#Text Extractor Component)
-* [Knowledge Comparison Engine](#Text Extractor Component)
+* [Knowledge Comparison Engine](#Knowledge Comparison Engine)
 * [Configuration](#Configuration)
 * [Usage](#Usage)
 
@@ -45,7 +45,7 @@ The Asteria System comprises three main subsystems:
 ![UML Component Diagram](./figures/SubsystemDecomposition.png)
 <p align="center"><b>Figure 1:</b> Architecture of the Asteria system interacting with a learning platform management system depicted using a UML Component diagram.</p>
 
-# Text Processing Pipeline
+#Text Processing Pipeline
 
 Figure 1 describes the text processing pipeline, including the various sub-tasks required to achieve the information
 extraction from text. At first, the text extractor component performs the entity coreference resolution. Afterward, it
@@ -70,7 +70,7 @@ Graph extracted from the student's solution.
 ![UML Activity Diagram](./figures/TextExtractor.png)
 <p align="center"><b>Figure 2:</b> Pipeline of the text processing pipeline depicted using a UML Activity diagram.</p>
 
-# Text Extractor Component
+#Text Extractor Component
 
 Information extraction entails arranging words of the unstructured text in structured categories. It consists of
 locating significant objects in text, categorizing them in predefined classes, and annotating the text with the
@@ -103,7 +103,7 @@ description presented in Figure 3.
 ![KG Figure](./figures/KG.png)
 <p align="center"><b>Figure 4:</b> Visualization of an example of a Knowledge Graph extracted from a textual description of a software pattern. The visualized graph represents the same text used in figure 3. </p>
 
-# Knowledge Comparison Engine
+#Knowledge Comparison Engine
 
 Figure 5 below gives an overview of the general workflow of the knowledge comparison engine. The latter takes as input
 two Knowledge Graphs, identifies similarities and differences between them and produces at the end three sets: set of
